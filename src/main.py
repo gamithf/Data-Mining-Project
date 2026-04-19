@@ -5,22 +5,21 @@ from modeling import run_models
 
 import os
 
-# Create folders if not exist
 os.makedirs("outputs/figures", exist_ok=True)
 
-# Step 1: Preprocessing
+# Preprocessing
 train = preprocess_data(
     "dataset/train.csv",
     "outputs/cleaned_train.csv"
 )
 
-# Step 2: EDA
+# EDA
 run_eda(train)
 
-# Step 3: Clustering
+# Clustering
 train = run_clustering(train)
 
-# Step 4: Modeling
+# Modeling
 results = run_models(train)
 
 print("\nPipeline Completed Successfully")

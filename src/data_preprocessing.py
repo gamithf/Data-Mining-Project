@@ -29,7 +29,6 @@ def preprocess_data(input_path, output_path):
     train = train[train['GrLivArea'] < 4000]
     print(f"Removed {before - train.shape[0]} outliers")
 
-    # Encoding
     train = pd.get_dummies(train)
 
     print("After Encoding:", train.shape)

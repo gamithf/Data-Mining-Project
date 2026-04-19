@@ -8,7 +8,6 @@ def run_eda(train):
     plt.savefig("outputs/figures/saleprice_distribution.png")
     plt.close()
 
-    # Correlation heatmap
     corr = train.corr(numeric_only=True)
     top_corr = corr["SalePrice"].abs().sort_values(ascending=False).head(15).index
 
