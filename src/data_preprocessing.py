@@ -13,7 +13,6 @@ def preprocess_data(input_path, output_path):
     for col in cat_cols:
         train[col] = train[col].fillna("None")
 
-    # Handle numerical
     num_cols = train.select_dtypes(include=['int64', 'float64']).columns
     for col in num_cols:
         if train[col].isnull().sum() > 0:
