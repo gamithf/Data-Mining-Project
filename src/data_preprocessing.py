@@ -33,6 +33,8 @@ def preprocess_data(input_path, output_path):
     train = train[train['GrLivArea'] < 4000]
     print(f"Removed {before - train.shape[0]} outliers")
 
+    train_clean = train.copy()
+
     # Encoding
     train = pd.get_dummies(train)
 
@@ -40,4 +42,4 @@ def preprocess_data(input_path, output_path):
 
     train.to_csv(output_path, index=False)
 
-    return train
+    return train, train_clean
