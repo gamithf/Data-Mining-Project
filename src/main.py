@@ -7,13 +7,13 @@ import os
 
 os.makedirs("outputs/figures", exist_ok=True)
 
-# Preprocessing
+# Preprocessing, Feature Engineering, and Outlier Analysis
 train = preprocess_data(
     "dataset/train.csv",
     "outputs/cleaned_train.csv"
 )
 
-# EDA
+# EDA, Correlation Analysis, and Feature Importance
 run_eda(train)
 
 # Clustering
